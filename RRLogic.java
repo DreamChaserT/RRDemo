@@ -124,6 +124,9 @@ public class RRLogic<T> {
      * @return
      */
     public int getMaxWeightForServers(List<RRBean<T>> serverList) {
+        if (1 == serverList.size()) {
+            return serverList.get(0).weight;
+        }
         int w = 0;
         for (int i = 0, len = serverList.size(); i < len - 1; i++) {
             if (w == 0) {
